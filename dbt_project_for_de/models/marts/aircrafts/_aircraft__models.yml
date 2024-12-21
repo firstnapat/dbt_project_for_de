@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: top_10_aircraft_range
+    description: "Top 10 aircraft data"

@@ -15,7 +15,7 @@ flights_cte AS (
 airports_cte AS (
     SELECT
         airport_code,
-        city
+        city,
         coordinates
     FROM {{ ref('stg_airports__cleaned') }}
 ),
@@ -39,8 +39,12 @@ joined_flights AS (
 json_extract AS (
     SELECT 
         flight_id, 
-        CAST(from_city, string)::jsonb ->> 'en') AS from_city,
-        
+        from_city,
+        substring(from_coordinates from '\(([^,]+),') AS from_latitude,
+        substring(from_coordinates from ',([^\)]+)\)') AS from_longitude,
+        to_city,
+        substring(to_coordinates from '\(([^,]+),') AS to_latitude,
+        substring(to_coordinates from ',([^\)]+)\)') AS to_longitude
     FROM joined_flights
 )
 
