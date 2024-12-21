@@ -1,0 +1,37 @@
+unit_tests:
+  - name: when_run_this_table_it_will_pass_schredule_to_date
+    description: "xxx"
+    model: stg_flights__cleaned
+    given:
+      - input: ref('base_flights__source')
+        rows:
+        - {
+            flight_id: 1,
+            flight_no: PG0405,
+            scheduled_departure: '2017-07-16 06:35:00+00',
+            scheduled_arrival: '2017-07-16 07:30:00+00',
+            departure_airport: DME,
+            arrival_airport: LED,
+            status: Arrived,
+            aircraft_code: 321,
+            actual_departure: '2017-07-16 09:44:00+03',
+            actual_arrival: '2017-07-16 10:39:00+03'
+          }
+    expect:
+      rows:
+        - {
+            flight_id: 1,
+            flight_no: PG0405,
+            scheduled_departure: '2017-07-16 06:35:00+00',
+            scheduled_arrival: '2017-07-16 07:30:00+00',
+            departure_airport: DME,
+            arrival_airport: LED,
+            status: Arrived,
+            aircraft_code: 321,
+            actual_departure: '2017-07-16 09:44:00+03',
+            actual_arrival: '2017-07-16 10:39:00+03',
+            scheduled_departure_date: '2017-07-16',
+            scheduled_arrival_date: '2017-07-16',
+            actual_departure_date: '2017-07-16',
+            actual_arrival_date: '2017-07-16'
+          }
