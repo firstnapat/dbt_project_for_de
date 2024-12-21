@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_flights__joined_with_airports
+  

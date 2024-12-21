@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: base_aircrafts__source
+    description: "Base model for airlines data"
+    columns:
+      - name: aircraft_code
+        description: "Unique identifier for each airline"
+      - name: model
+        description: "Name of the aircraft model"
+      - name: range
+        description: "Range of the aircraft"
+        
+  - name: base_airports__source
+    description: "Base model for airlines data"
+    columns:
+      - name: airport_code
+        description: "Unique identifier for each airport"
+      - name: airport_name
+        description: "Name of airport"
+      - name: city
+        description: "City where the airport is located"
+      - name: coordinates
+        description: "Coordinates of the airport"
+      - name: timezone
+        description: "Timezone of the airport"
+
+  - name: base_flights__source
+    description: "Base model for airlines data"
+    columns:
+      - name: flight_id
+        description: "Unique identifier for each flight"
+      - name: flight_no
+        description: "Flight number"
+      - name: scheduled_departure
+        description: "Scheduled departure time"
+      - name: scheduled_arrival
+        description: "Scheduled arrival time"
+      - name: departure_airport
+        description: "Code of the departure airport"
+      - name: arrival_airport
+        description: "Code of the arrival airport"
+      - name: status
+        description: "Status of the flight"
+      - name: aircraft_code
+        description: "Unique identifier for each airline"
+      - name: actual_departure
+        description: "Actual departure time"
+      - name: actual_arrival
+        description: "Actual arrival time"

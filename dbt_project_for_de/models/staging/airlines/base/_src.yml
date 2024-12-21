@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: ieie
+    tables:
+      - name: airports_data
+      - name: aircrafts_data
+      - name: flights
+      - name: bookings
+      - name: tickets
+      - name: ticket_flights
+      - name: boarding_passes
+
+

@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: stg_airports__cleaned
+    description: "Cleaned airports data"
+    columns:
+      - name: airport_code
+        description: "Unique identifier for each airport"
+      - name: airport_name
+        description: "Name of airport"
+      - name: city
+        description: "City where the airport is located"
+      - name: latitude
+        description: "Latitude of the airport"
+      - name: longitude
+        description: "Longitude of the airport"
+      - name: timezone
+        description: "Timezone of the airport"
+
+  - name: stg_flights__cleaned
+    description: "Cleaned flights data"
+    columns:
+      - name: flight_id
+        description: "Unique identifier for each flight"
+      - name: flight_no
+        description: "Flight number"
+      - name: sche_arrival
+        description: "Scheduled arrival time"
+      - name: sche_departure
+        description: "Scheduled departure time"
+      - name: dep_airport
+        description: "Departure airport"
+      - name: arr_airport
+        description: "Arrival airport"
+      - name: status
+        description: "Flight status"
+      - name: aircraft_code
+        description: "Aircraft code"
+      - name: act_departure
+        description: "Actual departure time"
+      - name: act_arrival
+        description: "Actual arrival time"
+      - name: scheduled_departure_date
+        description: "Scheduled departure date"
+      - name: scheduled_arrival_date
+        description: "Scheduled arrival date"
+      - name: actual_departure_date
+        description: "Actual departure date"
+      - name: actual_arrival_date
+        description: "Actual arrival date"
