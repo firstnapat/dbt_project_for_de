@@ -42,8 +42,15 @@ models:
         description: "Code of the arrival airport"
       - name: status
         description: "Status of the flight"
+        tests:
+          - accepted_values: 
+              values: ['Departed', 'Arrived', 'On Time', 'Cancelled', 'Delayed', 'Scheduled']
       - name: aircraft_code
         description: "Unique identifier for each airline"
+        # tests:
+        #   - relationships:
+        #     to: ref('base_aircrafts__source')
+        #     field: aircraft_code
       - name: actual_departure
         description: "Actual departure time"
       - name: actual_arrival
