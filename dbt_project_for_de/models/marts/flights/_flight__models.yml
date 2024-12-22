@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: flight_length
+    description: "Flight length data"
